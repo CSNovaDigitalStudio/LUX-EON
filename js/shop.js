@@ -354,20 +354,24 @@ function updateCart(){
 
 updateCart();
 
-document
-.getElementById("checkoutForm")
-.addEventListener("submit", e=>{
+const checkoutForm =
+document.getElementById("checkoutForm");
 
-e.preventDefault();
+if(checkoutForm){
 
-const message =
-encodeURIComponent(
-"Hello Luxeon, I'd like to place my order."
-);
+    checkoutForm.addEventListener("submit", e=>{
 
-window.open(
-`https://wa.me/27639561729?text=${message}`
-);
+        e.preventDefault();
 
-});
+        const message =
+        encodeURIComponent(
+        "Hello Luxeon, I'd like to place my order."
+        );
 
+        window.open(
+        `https://wa.me/27639561729?text=${message}`
+        );
+
+    });
+
+}
